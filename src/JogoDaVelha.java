@@ -14,20 +14,16 @@ public class JogoDaVelha {
         char[][] tabuleiro = new char[3][3];
         inicializarTabuleiro(tabuleiro);
 
-
         char jogadorAtual = 'X';
         boolean jogoEmAndamento = true;
-
 
         while (jogoEmAndamento) {
             imprimirTabuleiro(tabuleiro);
             System.out.println("Vez de " + (jogadorAtual == 'X' ? jogador1 : jogador2));
 
-
             System.out.print("Digite a linha (0-2) e a coluna (0-2) separados por espaço: ");
             int linha = input.nextInt();
             int coluna = input.nextInt();
-
 
             if (linha >= 0 && linha < 3 && coluna >= 0 && coluna < 3 && tabuleiro[linha][coluna] == ' ') {
                 tabuleiro[linha][coluna] = jogadorAtual;
@@ -47,7 +43,6 @@ public class JogoDaVelha {
                 System.out.println("Jogada inválida, tente novamente.");
             }
         }
-
         input.close();
     }
 
@@ -82,7 +77,6 @@ public class JogoDaVelha {
                 (tabuleiro[0][2] == jogador && tabuleiro[1][1] == jogador && tabuleiro[2][0] == jogador)) {
             return true;
         }
-
         return false;
     }
 
